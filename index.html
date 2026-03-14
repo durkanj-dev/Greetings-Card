@@ -3,39 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Year Greeting 2026 - Year of the Horse</title>
+    <title>New Year Greeting 2026</title>
     <style>
-        /* Base Reset */
+        /* Reset and Base Styles */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        /* Ensure the page can scroll naturally */
-        html {
-            height: -webkit-fill-available;
-        }
-
+        
         body {
             background-color: #0d0d0d;
             background-image: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
             color: #F5F5F5;
-            font-family: 'Segoe UI', serif;
-            display: block; /* Allows natural vertical scrolling */
+            font-family: 'Segoe UI', 'Georgia', serif;
+            display: block; /* Allows scrolling */
             overflow-x: hidden;
-            padding: 40px 15px; /* Added top/bottom padding for mobile breathing room */
+            padding: 40px 15px;
             min-height: 100vh;
         }
 
-        /* Sakura Petal Animation */
+        /* Sakura Animation */
         .sakura {
             position: fixed;
             top: -10%;
             background-color: #ffb7c5;
             border-radius: 100% 0 100% 0;
-            opacity: 0.7;
+            opacity: 0.6;
             pointer-events: none;
             z-index: 1;
             animation: fall linear infinite;
         }
-
         @keyframes fall {
             0% { transform: translateY(0) rotate(0deg); opacity: 0; }
             10% { opacity: 0.8; }
@@ -51,15 +45,14 @@
             z-index: 10;
             background: rgba(10, 10, 10, 0.95);
             padding: 40px 20px;
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.9);
-            margin: 0 auto; /* Centers horizontally */
+            border: 1px solid #D4AF37;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 1);
+            margin: 0 auto;
             border-radius: 4px;
         }
 
         h1 {
             color: #D4AF37;
-            font-family: 'Georgia', serif;
             font-size: clamp(1.6rem, 7vw, 2.5rem);
             margin-bottom: 30px;
             text-transform: uppercase;
@@ -69,12 +62,12 @@
             padding-bottom: 10px;
         }
 
-        /* Video Frame - Responsive 16:9 */
+        /* Video Frame */
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; 
+            padding-bottom: 56.25%; /* 16:9 ratio */
             height: 0;
-            border: 3px double #D4AF37;
+            border: 2px solid #D4AF37;
             margin-bottom: 35px;
             background: #000;
         }
@@ -85,12 +78,12 @@
             left: 0;
             width: 100%;
             height: 100%;
+            border: 0;
         }
 
         .message {
-            font-family: 'Georgia', serif;
             line-height: 1.8;
-            font-size: clamp(1.15rem, 4.5vw, 1.3rem);
+            font-size: clamp(1.1rem, 4.5vw, 1.3rem);
             color: #d1d1d1;
             max-width: 600px;
             margin: 0 auto;
@@ -102,14 +95,9 @@
             margin-top: 30px;
             display: block;
             font-style: italic;
-            font-size: 1.2rem;
-            line-height: 1.5;
         }
 
-        /* Extra space for mobile footer */
-        .footer-spacer {
-            height: 40px;
-        }
+        .spacer { height: 40px; }
     </style>
 </head>
 <body>
@@ -118,7 +106,7 @@
         function createPetal() {
             const petal = document.createElement('div');
             petal.classList.add('sakura');
-            const size = Math.random() * 10 + 5 + 'px';
+            const size = Math.random() * 8 + 4 + 'px';
             petal.style.width = size;
             petal.style.height = size;
             petal.style.left = Math.random() * 100 + 'vw';
@@ -134,11 +122,9 @@
 
         <div class="video-wrapper">
             <iframe 
-                src="https://www.youtube-nocookie.com/embed/RhH0dQ0Igiw?rel=0" 
+                src="https://www.youtube.com/embed/RhH0dQ0Igiw" 
                 title="New Year Greeting"
-                frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                referrerpolicy="no-referrer"
                 allowfullscreen>
             </iframe>
         </div>
@@ -150,7 +136,7 @@
             
             <span class="gold-signature">With warmest wishes, <br> John and family</span>
         </div>
-        <div class="footer-spacer"></div>
+        <div class="spacer"></div>
     </div>
 
 </body>
