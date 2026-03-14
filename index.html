@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Greeting 2026</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: #0d0d0d;
+            background-image: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+            color: #F5F5F5;
+            font-family: 'Segoe UI', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        /* Sakura Petals */
+        .sakura {
+            position: fixed;
+            top: -10%;
+            background-color: #ffb7c5;
+            border-radius: 100% 0 100% 0;
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: 1;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
+        .card {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            background: rgba(10, 10, 10, 0.95);
+            padding: 40px;
+            border: 1px solid #D4AF37;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 1);
+        }
+
+        h1 {
+            color: #D4AF37;
+            font-family: 'Georgia', serif;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            border: 2px solid #D4AF37;
+            background: #000;
+            margin-bottom: 25px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .message {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            font-size: 1.2rem;
+            color: #e0e0e0;
+        }
+
+        .signature {
+            color: #D4AF37;
+            margin-top: 20px;
+            font-style: italic;
+            font-weight: bold;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('sakura');
+            const size = Math.random() * 8 + 4 + 'px';
+            petal.style.width = size;
+            petal.style.height = size;
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = Math.random() * 5 + 7 + 's'; 
+            document.body.appendChild(petal);
+            setTimeout(() => { petal.remove(); }, 12000);
+        }
+        setInterval(createPetal, 400);
+    </script>
+
+    <div class="card">
+        <h1>2026 Year of the Horse</h1>
+
+        <div class="video-container">
+            <iframe 
+                src="https://drive.google.com/file/d/1M6FVzkdj0WxNPCdUZOP0Fig5svN16cs6/preview" 
+                allow="autoplay">
+            </iframe>
+        </div>
+
+        <div class="message">
+            <p>Dear Kaoru,</p>
+            <p>In honor of your remarkable samurai lineage, we wanted to send you this special greeting. May the strength and spirit of the Horse bring you and your family victory and health this year.</p>
+            <span class="signature">With warmest wishes, <br> John and family</span>
+        </div>
+    </div>
+
+</body>
+</html>
