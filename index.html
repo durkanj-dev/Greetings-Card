@@ -6,88 +6,148 @@
     <title>2026 Year of the Horse</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
-            background-color: #f9f9f9;
-            background-image: radial-gradient(circle at center, #ffffff 0%, #f4f4f4 100%);
+            /* Washi Paper Texture Effect */
+            background-color: #fcfaf2; 
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
             color: #8B0000;
-            font-family: 'Georgia', serif;
+            font-family: 'serif';
             text-align: center;
             padding: 40px 15px;
             min-height: 100vh;
-            display: block; /* Ensures natural scrolling */
+            overflow-x: hidden;
         }
+
+        /* Improved Petals */
+        .sakura {
+            position: fixed;
+            top: -10%;
+            background-color: #ffb7c5;
+            border-radius: 100% 0 100% 0;
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: 1;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg) translateX(0); opacity: 0; }
+            10% { opacity: 0.8; }
+            50% { transform: translateY(50vh) rotate(180deg) translateX(20px); }
+            100% { transform: translateY(110vh) rotate(360deg) translateX(-20px); opacity: 0; }
+        }
+
         .card {
             max-width: 800px;
-            margin: 20px auto; /* Added margin at the top */
-            background: #ffffff;
-            padding: 40px 20px;
-            border: 3px double #B8860B;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            border-radius: 8px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 50px 25px;
+            border: 2px solid #B8860B;
+            /* Double gold border effect */
+            outline: 6px double #B8860B;
+            outline-offset: -12px;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+            border-radius: 2px;
+            position: relative;
+            z-index: 10;
         }
+
         h1 {
             font-family: 'Brush Script MT', cursive;
-            font-size: clamp(2.2rem, 8vw, 3.5rem);
+            font-size: clamp(2.2rem, 8vw, 3.8rem);
             color: #B8860B;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
         }
+
         .video-box {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
-            margin-bottom: 30px;
-            border: 1px solid #ddd;
+            margin-bottom: 40px;
+            border: 2px solid #333;
             background: #000;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
+
         .video-box iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             border: 0;
         }
+
         .content p {
-            font-size: clamp(1.1rem, 4vw, 1.3rem);
-            line-height: 1.8;
-            margin-bottom: 20px;
-            color: #333;
+            font-size: clamp(1.1rem, 4.5vw, 1.35rem);
+            line-height: 1.9;
+            margin-bottom: 25px;
+            color: #2c2c2c;
+            font-weight: 500;
         }
+
+        /* The Hanko (Seal) Style */
         .japanese-text {
             font-family: "Hiragino Mincho ProN", "MS Mincho", serif;
-            font-size: clamp(1.3rem, 5vw, 1.8rem);
+            font-size: clamp(1.4rem, 6vw, 2rem);
             color: #8B0000;
-            display: block;
-            margin: 25px 0;
+            display: inline-block;
+            margin: 30px 0;
+            padding: 10px 20px;
+            border: 2px solid #8B0000; /* Red Seal Look */
             font-weight: bold;
+            background: rgba(139, 0, 0, 0.03);
         }
+
         .signature {
             font-family: 'Segoe Script', 'Brush Script MT', cursive;
-            font-size: clamp(1.6rem, 6vw, 2.2rem);
+            font-size: clamp(1.8rem, 7vw, 2.5rem);
             color: #B8860B;
-            margin-top: 10px;
+            margin-top: 15px;
         }
-        .spacer { height: 40px; }
+        
+        .spacer { height: 60px; }
     </style>
 </head>
 <body>
+
+    <script>
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('sakura');
+            const size = Math.random() * 12 + 6 + 'px';
+            petal.style.width = size;
+            petal.style.height = size;
+            petal.style.left = Math.random() * 100 + 'vw';
+            // Varied speeds for more realism
+            petal.style.animationDuration = Math.random() * 7 + 4 + 's'; 
+            document.body.appendChild(petal);
+            setTimeout(() => { petal.remove(); }, 10000);
+        }
+        setInterval(createPetal, 450);
+    </script>
+
     <div class="card">
         <h1>2026 Year of the Horse</h1>
+        
         <div class="video-box">
             <iframe 
                 src="https://www.youtube.com/embed/RhH0dQ0Igiw?rel=0&loop=1&playlist=RhH0dQ0Igiw" 
                 allowfullscreen>
             </iframe>
         </div>
+
         <div class="content">
             <p>Dear Kaoru,</p>
             <p>In honor of your remarkable samurai lineage, we wanted to send you this special greeting.</p>
             <p>May the strength and spirit of the Horse bring you and your family victory, health, and boundless joy this year.</p>
-            <span class="japanese-text">幸せと健康が満ちますように</span>
+            
+            <div class="japanese-text">幸せと健康が満ちますように</div>
+
             <p>With warmest wishes,</p>
             <div class="signature">John and family</div>
         </div>
         <div class="spacer"></div>
     </div>
+
 </body>
 </html>
