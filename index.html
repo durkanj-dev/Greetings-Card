@@ -3,141 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Year Greeting 2026</title>
+    <title>2026 Year of the Horse</title>
     <style>
-        /* Reset and Base Styles */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        
         body {
-            background-color: #0d0d0d;
-            background-image: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
-            color: #F5F5F5;
-            font-family: 'Segoe UI', 'Georgia', serif;
-            display: block; /* Allows scrolling */
-            overflow-x: hidden;
+            background-color: #f9f9f9;
+            background-image: radial-gradient(circle at center, #ffffff 0%, #f4f4f4 100%);
+            color: #8B0000;
+            font-family: 'Georgia', serif;
+            text-align: center;
             padding: 40px 15px;
             min-height: 100vh;
         }
-
-        /* Sakura Animation */
-        .sakura {
-            position: fixed;
-            top: -10%;
-            background-color: #ffb7c5;
-            border-radius: 100% 0 100% 0;
-            opacity: 0.6;
-            pointer-events: none;
-            z-index: 1;
-            animation: fall linear infinite;
-        }
-        @keyframes fall {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.8; }
-            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
-        }
-
-        /* Container Card */
         .card {
             max-width: 800px;
-            width: 100%;
-            text-align: center;
-            position: relative;
-            z-index: 10;
-            background: rgba(10, 10, 10, 0.95);
-            padding: 40px 20px;
-            border: 1px solid #D4AF37;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 1);
             margin: 0 auto;
-            border-radius: 4px;
+            background: #ffffff;
+            padding: 40px 20px;
+            border: 3px double #B8860B;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
         }
-
         h1 {
-            color: #D4AF37;
-            font-size: clamp(1.6rem, 7vw, 2.5rem);
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            display: inline-block;
-            padding-bottom: 10px;
+            font-family: 'Brush Script MT', cursive;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: #B8860B;
+            margin-bottom: 25px;
         }
-
-        /* Video Frame */
-        .video-wrapper {
+        .video-box {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 ratio */
+            padding-bottom: 56.25%;
             height: 0;
-            border: 2px solid #D4AF37;
-            margin-bottom: 35px;
-            background: #000;
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
         }
-
-        .video-wrapper iframe {
+        .video-box iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border: 0;
         }
-
-        .message {
+        .content p {
+            font-size: clamp(1.1rem, 4vw, 1.3rem);
             line-height: 1.8;
-            font-size: clamp(1.1rem, 4.5vw, 1.3rem);
-            color: #d1d1d1;
-            max-width: 600px;
-            margin: 0 auto;
+            margin-bottom: 20px;
+            color: #333;
         }
-
-        .gold-signature {
-            color: #D4AF37;
-            font-weight: bold;
-            margin-top: 30px;
+        .japanese-text {
+            font-family: "Hiragino Mincho ProN", "MS Mincho", serif;
+            font-size: clamp(1.3rem, 5vw, 1.8rem);
+            color: #8B0000;
             display: block;
-            font-style: italic;
+            margin: 25px 0;
+            font-weight: bold;
         }
-
-        .spacer { height: 40px; }
+        .signature {
+            font-family: 'Segoe Script', 'Brush Script MT', cursive;
+            font-size: clamp(1.6rem, 6vw, 2.2rem);
+            color: #B8860B;
+        }
     </style>
 </head>
 <body>
-
-    <script>
-        function createPetal() {
-            const petal = document.createElement('div');
-            petal.classList.add('sakura');
-            const size = Math.random() * 8 + 4 + 'px';
-            petal.style.width = size;
-            petal.style.height = size;
-            petal.style.left = Math.random() * 100 + 'vw';
-            petal.style.animationDuration = Math.random() * 5 + 6 + 's'; 
-            document.body.appendChild(petal);
-            setTimeout(() => { petal.remove(); }, 11000);
-        }
-        setInterval(createPetal, 400);
-    </script>
-
     <div class="card">
         <h1>2026 Year of the Horse</h1>
-
-        <div class="video-wrapper">
-            <iframe 
-                src="https://www.youtube.com/embed/RhH0dQ0Igiw" 
-                title="New Year Greeting"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/RhH0dQ0Igiw?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
-
-        <div class="message">
+        <div class="content">
             <p>Dear Kaoru,</p>
-            <br>
-            <p>In honor of your remarkable samurai lineage, we wanted to send you this special greeting. May the strength and spirit of the Horse bring you and your family victory and health this year.</p>
-            
-            <span class="gold-signature">With warmest wishes, <br> John and family</span>
+            <p>In honor of your remarkable samurai lineage, we wanted to send you this special greeting.</p>
+            <p>May the strength and spirit of the Horse bring you and your family victory, health, and boundless joy this year.</p>
+            <span class="japanese-text">幸せと健康が満ちますように</span>
+            <p>With warmest wishes,</p>
+            <div class="signature">John and family</div>
         </div>
-        <div class="spacer"></div>
     </div>
-
 </body>
 </html>
