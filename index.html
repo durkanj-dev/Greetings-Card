@@ -14,10 +14,11 @@
             text-align: center;
             padding: 40px 15px;
             min-height: 100vh;
+            display: block; /* Ensures natural scrolling */
         }
         .card {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 20px auto; /* Added margin at the top */
             background: #ffffff;
             padding: 40px 20px;
             border: 3px double #B8860B;
@@ -26,7 +27,7 @@
         }
         h1 {
             font-family: 'Brush Script MT', cursive;
-            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-size: clamp(2.2rem, 8vw, 3.5rem);
             color: #B8860B;
             margin-bottom: 25px;
         }
@@ -36,6 +37,7 @@
             height: 0;
             margin-bottom: 30px;
             border: 1px solid #ddd;
+            background: #000;
         }
         .video-box iframe {
             position: absolute;
@@ -43,6 +45,7 @@
             left: 0;
             width: 100%;
             height: 100%;
+            border: 0;
         }
         .content p {
             font-size: clamp(1.1rem, 4vw, 1.3rem);
@@ -62,14 +65,19 @@
             font-family: 'Segoe Script', 'Brush Script MT', cursive;
             font-size: clamp(1.6rem, 6vw, 2.2rem);
             color: #B8860B;
+            margin-top: 10px;
         }
+        .spacer { height: 40px; }
     </style>
 </head>
 <body>
     <div class="card">
         <h1>2026 Year of the Horse</h1>
         <div class="video-box">
-            <iframe src="https://www.youtube.com/embed/RhH0dQ0Igiw?rel=0&loop=1&playlist=RhH0dQ0Igiw"rel=0" frameborder="0" allowfullscreen></iframe>
+            <iframe 
+                src="https://www.youtube.com/embed/RhH0dQ0Igiw?rel=0&loop=1&playlist=RhH0dQ0Igiw" 
+                allowfullscreen>
+            </iframe>
         </div>
         <div class="content">
             <p>Dear Kaoru,</p>
@@ -79,6 +87,7 @@
             <p>With warmest wishes,</p>
             <div class="signature">John and family</div>
         </div>
+        <div class="spacer"></div>
     </div>
 </body>
 </html>
