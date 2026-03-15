@@ -3,63 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 Year of the Horse</title>
+    <title>2026 Year of the Horse - Heritage Edition</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
             background-color: #fcfaf2; 
             color: #8B0000;
-            font-family: 'serif';
+            font-family: 'Georgia', serif;
             text-align: center;
-            padding: 40px 15px;
+            padding: 20px 15px;
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* The Texture Overlay - Fixed to allow clicking through */
+        /* Washi Paper Effect */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
-            pointer-events: none; /* THIS ALLOWS THE VIDEO TO BE CLICKED */
+            pointer-events: none;
             z-index: 2;
-            opacity: 0.6;
+            opacity: 0.5;
         }
 
-        /* Improved Petals - Also non-blocking */
         .sakura {
             position: fixed;
             top: -10%;
             background-color: #ffb7c5;
             border-radius: 100% 0 100% 0;
             opacity: 0.6;
-            pointer-events: none; /* CANNOT BLOCK CLICKS */
+            pointer-events: none;
             z-index: 3;
             animation: fall linear infinite;
         }
 
         @keyframes fall {
-            0% { transform: translateY(0) rotate(0deg) translateX(0); opacity: 0; }
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
             10% { opacity: 0.8; }
-            50% { transform: translateY(50vh) rotate(180deg) translateX(20px); }
-            100% { transform: translateY(110vh) rotate(360deg) translateX(-20px); opacity: 0; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
         }
 
         .card {
             max-width: 800px;
-            margin: 20px auto;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 50px 25px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.96);
+            padding: 50px 30px;
             border: 2px solid #B8860B;
-            outline: 6px double #B8860B;
-            outline-offset: -12px;
-            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
-            border-radius: 2px;
+            outline: 8px double #B8860B;
+            outline-offset: -15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
             position: relative;
-            z-index: 10; /* Above the texture and petals */
+            z-index: 10;
         }
 
         h1 {
@@ -74,10 +71,9 @@
             padding-bottom: 56.25%;
             height: 0;
             margin-bottom: 40px;
-            border: 2px solid #333;
+            border: 3px solid #333;
             background: #000;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            z-index: 20; /* Ensures video is on the very top layer */
+            z-index: 20;
         }
 
         .video-box iframe {
@@ -86,33 +82,48 @@
             border: 0;
         }
 
-        .content p {
-            font-size: clamp(1.1rem, 4.5vw, 1.35rem);
-            line-height: 1.9;
-            margin-bottom: 25px;
-            color: #2c2c2c;
-        }
-
+        /* Calligraphy Box */
         .japanese-text {
-            font-family: "Hiragino Mincho ProN", "MS Mincho", serif;
-            font-size: clamp(1.4rem, 6vw, 2rem);
+            font-family: serif;
+            font-size: clamp(1.4rem, 6vw, 2.2rem);
             color: #8B0000;
             display: inline-block;
             margin: 30px 0;
-            padding: 10px 20px;
+            padding: 15px 30px;
             border: 2px solid #8B0000;
             font-weight: bold;
-            background: rgba(139, 0, 0, 0.03);
+            background: rgba(139, 0, 0, 0.02);
+        }
+
+        .heritage-quote {
+            font-style: italic;
+            border-left: 4px solid #B8860B;
+            padding: 10px 20px;
+            margin: 40px 0;
+            text-align: left;
+            background: #fffdf5;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .history-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #B8860B;
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
 
         .signature {
-            font-family: 'Segoe Script', 'Brush Script MT', cursive;
-            font-size: clamp(1.8rem, 7vw, 2.5rem);
+            font-family: 'Brush Script MT', cursive;
+            font-size: clamp(2rem, 8vw, 2.8rem);
             color: #B8860B;
-            margin-top: 15px;
+            margin-top: 20px;
         }
-        
-        .spacer { height: 60px; }
+
+        .spacer { height: 50px; }
     </style>
 </head>
 <body>
@@ -125,11 +136,11 @@
             petal.style.width = size;
             petal.style.height = size;
             petal.style.left = Math.random() * 100 + 'vw';
-            petal.style.animationDuration = Math.random() * 7 + 4 + 's'; 
+            petal.style.animationDuration = Math.random() * 6 + 4 + 's'; 
             document.body.appendChild(petal);
             setTimeout(() => { petal.remove(); }, 10000);
         }
-        setInterval(createPetal, 450);
+        setInterval(createPetal, 400);
     </script>
 
     <div class="card">
@@ -144,12 +155,17 @@
 
         <div class="content">
             <p>Dear Kaoru,</p>
-            <p>In honor of your remarkable samurai lineage, we wanted to send you this special greeting.</p>
+            <p>In honor of your remarkable samurai lineage, we wanted to send you this special greeting for the New Year.</p>
             <p>May the strength and spirit of the Horse bring you and your family victory, health, and boundless joy this year.</p>
             
             <div class="japanese-text">幸せと健康が満ちますように</div>
 
-            <p>With warmest wishes,</p>
+            <div class="heritage-quote">
+                <span class="history-title">The Way of the Horse</span>
+                "Kyūba no Michi" (弓馬の道) — Long before the katana became the soul of the Samurai, it was the horse and the bow that defined their noble spirit. To the warrior, the horse was a symbol of unshakeable loyalty and the power to overcome any obstacle.
+            </div>
+
+            <p>With warmest wishes for 2026,</p>
             <div class="signature">John and family</div>
         </div>
         <div class="spacer"></div>
