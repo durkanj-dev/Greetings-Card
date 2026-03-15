@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A heritage New Year greeting for the Year of the Horse 2026">
     <title>2026 Year of the Horse - Heritage Edition</title>
+
+    <!-- Web-safe script font fallback (Brush Script MT is Windows-only) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        
+
         body {
-            background-color: #fcfaf2; 
+            background-color: #fcfaf2;
             color: #8B0000;
             font-family: 'Georgia', serif;
             text-align: center;
@@ -18,15 +25,20 @@
             position: relative;
         }
 
-        /* Washi Paper Effect */
+        /* Self-contained CSS grain — no external dependency */
         body::before {
             content: "";
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
             pointer-events: none;
             z-index: 2;
             opacity: 0.5;
+        }
+
+        /* Respect reduced-motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            .sakura { animation: none; display: none; }
         }
 
         .sakura {
@@ -34,15 +46,14 @@
             top: -10%;
             background-color: #ffb7c5;
             border-radius: 100% 0 100% 0;
-            opacity: 0.6;
             pointer-events: none;
             z-index: 3;
             animation: fall linear infinite;
         }
 
         @keyframes fall {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.8; }
+            0%   { transform: translateY(0) rotate(0deg);      opacity: 0; }
+            10%  { opacity: 0.8; }
             100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
         }
 
@@ -51,16 +62,19 @@
             margin: 40px auto;
             background: rgba(255, 255, 255, 0.96);
             padding: 50px 30px;
+            /* box-shadow stack respects border-radius; outline does not */
             border: 2px solid #B8860B;
-            outline: 8px double #B8860B;
-            outline-offset: -15px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            box-shadow:
+                0 0 0 13px rgba(255,255,255,0.96),
+                0 0 0 15px #B8860B,
+                0 20px 50px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
             position: relative;
             z-index: 10;
         }
 
         h1 {
-            font-family: 'Brush Script MT', cursive;
+            font-family: 'Dancing Script', 'Brush Script MT', cursive;
             font-size: clamp(2.2rem, 8vw, 3.8rem);
             color: #B8860B;
             margin-bottom: 30px;
@@ -82,7 +96,6 @@
             border: 0;
         }
 
-        /* Calligraphy Box */
         .japanese-text {
             font-family: serif;
             font-size: clamp(1.4rem, 6vw, 2.2rem);
@@ -116,8 +129,15 @@
             font-weight: bold;
         }
 
+        /* Paragraph spacing inside the letter body */
+        .content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: #444;
+        }
+
         .signature {
-            font-family: 'Brush Script MT', cursive;
+            font-family: 'Dancing Script', 'Brush Script MT', cursive;
             font-size: clamp(2rem, 8vw, 2.8rem);
             color: #B8860B;
             margin-top: 20px;
@@ -128,28 +148,16 @@
 </head>
 <body>
 
-    <script>
-        function createPetal() {
-            const petal = document.createElement('div');
-            petal.classList.add('sakura');
-            const size = Math.random() * 12 + 6 + 'px';
-            petal.style.width = size;
-            petal.style.height = size;
-            petal.style.left = Math.random() * 100 + 'vw';
-            petal.style.animationDuration = Math.random() * 6 + 4 + 's'; 
-            document.body.appendChild(petal);
-            setTimeout(() => { petal.remove(); }, 10000);
-        }
-        setInterval(createPetal, 400);
-    </script>
-
     <div class="card">
         <h1>2026 Year of the Horse</h1>
-        
+
         <div class="video-box">
-            <iframe 
-                src="https://www.youtube.com/embed/RhH0dQ0Igiw?rel=0&loop=1&playlist=RhH0dQ0Igiw" 
-                allowfullscreen>
+            <iframe
+                src="https://www.youtube.com/embed/RhH0dQ0Igiw?rel=0&loop=1&playlist=RhH0dQ0Igiw"
+                title="2026 Year of the Horse – heritage celebration video"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy">
             </iframe>
         </div>
 
@@ -157,7 +165,7 @@
             <p>Dear Kaoru,</p>
             <p>In honor of your remarkable samurai lineage, we wanted to send you this special greeting for the New Year.</p>
             <p>May the strength and spirit of the Horse bring you and your family victory, health, and boundless joy this year.</p>
-            
+
             <div class="japanese-text">幸せと健康が満ちますように</div>
 
             <div class="heritage-quote">
@@ -170,6 +178,37 @@
         </div>
         <div class="spacer"></div>
     </div>
+
+    <!-- Script at bottom of body; interval pauses when tab is hidden -->
+    <script>
+        let petalInterval;
+
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('sakura');
+            const size = Math.random() * 12 + 6 + 'px';
+            petal.style.width = size;
+            petal.style.height = size;
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = Math.random() * 6 + 4 + 's';
+            document.body.appendChild(petal);
+            setTimeout(() => { petal.remove(); }, 10000);
+        }
+
+        function startPetals() {
+            petalInterval = setInterval(createPetal, 400);
+        }
+
+        function stopPetals() {
+            clearInterval(petalInterval);
+        }
+
+        document.addEventListener('visibilitychange', () => {
+            document.hidden ? stopPetals() : startPetals();
+        });
+
+        startPetals();
+    </script>
 
 </body>
 </html>
